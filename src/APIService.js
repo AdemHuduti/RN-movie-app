@@ -44,6 +44,12 @@ export default {
       url: UPCOMING_MOVIES
     })
   },
+  getTopRatedMovies() {
+    return axios({
+      method: "GET",
+      url: TOP_RATED_MOVIES
+    })
+  },
 
   getMoviesById(id) {
     return axios({

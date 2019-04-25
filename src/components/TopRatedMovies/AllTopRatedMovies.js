@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image, ScrollView, StyleSheet, ActivityIndicator } from 'react-native';
-import APIService from '../APIService';
+import APIService from '../../APIService';
 import { connect } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
-import MainMenu from '../components/MainMenu';
-import MainNavbar from '../components/MainNavBar';
+import MainMenu from '../../components/MainMenu';
+import MainNavbar from '../../components/MainNavBar';
 
-import style from './style';
+import style from './allTopRatedMoviesStyle';
 
-class Movies extends Component {
+class AllTopRatedMovies extends Component {
   componentDidMount() {
-    this.getPopularHomeMovies()
+    this.getTopRatedMovies()
   }
 
-  getPopularHomeMovies() {
+  getTopRatedMovies() {
     const { showMovies } = this.props;
     if (!showMovies.length) {
-      APIService.getPopularHomeMovies()
+      APIService.getTopRatedMovies()
         .then(response => {
-          this.loadMovies(response.data)
+          this.loadTopRatedMovies(response.data)
         })
     }
   }
 
-  loadMovies = (data) => this.props.dispatch({ type: 'GET_MOVIES', data });
+  loadTopRatedMovies = (data) => this.props.dispatch({ type: 'GET_MOVIES', data });
   toggleMainMenu = () => this.props.dispatch({type: 'TOGGLE_MENU'});
 
   showSingleMovie(id) {
@@ -76,7 +76,7 @@ class Movies extends Component {
         <MainNavbar
         navigation={this.props.navigation}
         navbarColor='white'
-        title="Popular Movies"
+        title="Top Rated Movies"
       />
           <ScrollView>
             {
@@ -97,4 +97,4 @@ const mapStateToProps = (state) => ({
   menuIsOpen: state.menuIsOpen,
 });
 
-export default connect(mapStateToProps)(Movies)
+export default connect(mapStateToProps)(AllTopRatedMovies)

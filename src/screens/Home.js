@@ -3,7 +3,8 @@ import { StatusBar } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { connect } from 'react-redux';
 import HomePopularMovie from '../components/HomePopularMovie/HomePopularMovie';
-import HomeUpcomingMovies from '../components/UpcomingMovies/UpcomingMovies'
+import HomeUpcomingMovies from '../components/UpcomingMovies/UpcomingMovies';
+import TopRatedMovieHome from '../components/TopRatedMovies/TopRatedMovieHome';
 import { ScrollView } from 'react-native-gesture-handler';
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
         <ScrollView>
           <HomePopularMovie navigation={this.props.navigation}/>
           <HomeUpcomingMovies navigation={this.props.navigation}/>
+          <TopRatedMovieHome navigation={this.props.navigation}/>
         </ScrollView>
         
       </LinearGradient>

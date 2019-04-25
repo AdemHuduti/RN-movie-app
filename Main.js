@@ -1,14 +1,16 @@
 import {createStackNavigator, createAppContainer} from "react-navigation";
 import Home from './src/screens/Home'
-import PopularMovies from './src/screens/PopularMovies';
+import PopularMovies from './src/components/HomePopularMovie/PopularMovies';
 import SingleMovie from './src/screens/SingleMovie';
 import UpcomingAllMovies from './src/components/UpcomingMovies/UpcomingAllMovies';
+import AllTopRatedMovies from './src/components/TopRatedMovies/AllTopRatedMovies';
 
 const NavigatorScreens = {
   Home,
   PopularMovies,
   SingleMovie,
-  UpcomingAllMovies
+  UpcomingAllMovies,
+  AllTopRatedMovies
 };
 
 const NavigatorOptions = {
