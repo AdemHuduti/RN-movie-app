@@ -27,7 +27,3 @@ react-native run-android
 ```
 react-native run-ios
 ```
-
-That's all
-
-If you want to install app in the device, connect your device to the system with debugger mode on and run the above command (app will be installed automatically)
