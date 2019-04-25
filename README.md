@@ -1,4 +1,4 @@
-# React Native Sample
+# React Native Movie Application
 
 *A sample app using react native for iOS & Android*
 
@@ -16,6 +16,11 @@ npm install
 
 **Step 3:** If Android
 
+***First run command ***
+```
+react-native start
+```
+***After open a new tab in the same terminal, then run command: ***
 ```
 react-native run-android
 ```
@@ -23,6 +28,12 @@ react-native run-android
 *Before running iOS build, Install [Xcode](https://developer.apple.com/xcode/download/)*
 
 **Step 4:** If iOS
+
+***First run command ***
+```
+react-native start
+```
+***After open a new tab in the same terminal, then run command: ***
 
 ```
 react-native run-ios
