@@ -1,6 +1,6 @@
 # React Native Movie Application
 
-*A sample app using react native for iOS & Android*
+*A sample movie app using react native for iOS & Android*
 
 ## Installation
 
@@ -33,7 +33,7 @@ react-native run-android
 ```
 react-native start
 ```
-**Afte,r open a new tab in the same terminal(command+T), then run command:**
+**After, open a new tab in the same terminal(command+T), then run command:**
 
 ```
 react-native run-ios

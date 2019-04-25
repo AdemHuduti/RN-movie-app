@@ -31,7 +31,7 @@ class SingleMovie extends Component {
   }
 
   toggleMainMenu = () => this.props.dispatch({type: 'TOGGLE_MENU'});
-
+  
   render() {
     const { singleMovie } = this.state;
     return (
