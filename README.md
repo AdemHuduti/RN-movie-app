@@ -20,7 +20,7 @@ npm install
 ```
 react-native start
 ```
-**After open a new tab in the same terminal, then run command:**
+**After, open a new tab in the same terminal(ctrl+T), then run command:**
 ```
 react-native run-android
 ```
@@ -33,7 +33,7 @@ react-native run-android
 ```
 react-native start
 ```
-**After open a new tab in the same terminal, then run command:**
+**Afte,r open a new tab in the same terminal(command+T), then run command:**
 
 ```
 react-native run-ios
