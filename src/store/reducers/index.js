@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import ShowAllPopularMovies from './ShowAllPopularMoviesReducer';
-import ShowPopularHome from './ShowPopularMoviesHome'
 import ShowUpcomingMovies from './ShowAllUpcomingMoviesReducer';
-import ShowUpcomingHome from './ShowUpcomingMoviesHome'
+import ShowAllTopRatedMovies from './ShowAllTopRatedMoviesReducer';
+import ShowPopularHome from './ShowPopularMoviesHome';
+import ShowUpcomingHome from './ShowUpcomingMoviesHome';
+import ShowToRatedHome from './ShowTopRatedMovies';
 import menu from './Menu';
 
 export default combineReducers({
@@ -10,6 +12,8 @@ export default combineReducers({
   showHomePopularMovies: ShowPopularHome,
   upcomingMovies: ShowUpcomingMovies,
   showHomeUpcomingMovies: ShowUpcomingHome,
+  showTopRatedMovies: ShowToRatedHome,
+  showAllTopRated: ShowAllTopRatedMovies,
   menuIsOpen: menu.menuIsOpen,
   // state: (state = {}) => state
 });

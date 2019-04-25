@@ -16,20 +16,19 @@ export default {
     paddingTop: 20,
     paddingBottom: 10,
   },
-  popularMovieTitle: {
+  topRatedMovieTitle: {
     color: '#fff',
     paddingBottom: 30,
     paddingTop: 30,
     fontSize: 16,
     paddingLeft: 20
   },
-  popularMoviesButton: {
+  topRatedMoviesButton: {
     flexDirection: 'row',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingBottom: 20
   },
-  popularMoviesButtonText: {
+  topRatedMoviesButtonText: {
     color: '#fff'
   },
-  
-  
 }

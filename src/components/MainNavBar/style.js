@@ -8,7 +8,8 @@ export default {
     alignItems: 'center',
     paddingHorizontal: 26,
     borderBottomColor: 'rgba(255,255,255,0.2)',
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
+    marginBottom: 20
   },
   mainTitle: {
     fontSize: 20
