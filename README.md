@@ -16,11 +16,11 @@ npm install
 
 **Step 3:** If Android
 
-***First run command ***
+**First run command**
 ```
 react-native start
 ```
-***After open a new tab in the same terminal, then run command: ***
+**After open a new tab in the same terminal, then run command:**
 ```
 react-native run-android
 ```
@@ -29,11 +29,11 @@ react-native run-android
 
 **Step 4:** If iOS
 
-***First run command ***
+**First run command**
 ```
 react-native start
 ```
-***After open a new tab in the same terminal, then run command: ***
+**After open a new tab in the same terminal, then run command:**
 
 ```
 react-native run-ios
