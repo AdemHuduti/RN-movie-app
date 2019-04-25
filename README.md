@@ -4,7 +4,7 @@
 
 ## Installation
 
-**Step 1:** clone my repo & cd into project
+**Step 1:** clone repo & cd into project
 
 **Step 2:** install node modules
 
