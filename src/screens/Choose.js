@@ -9,13 +9,13 @@ class Choose extends Component {
     const { navigate } = this.props.navigation;
     return (
       <LinearGradient
-        start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }}
+        start={{ x: 0, y: 0 }} end={{ x: 0.5, y: 1.0 }}
         colors={['#0f0c29', '#302b63', '#24243e']}
         style={{ flex: 1 }}
       >
         <StatusBar
-          backgroundColor="transparent"
           barStyle="light-content"
+          translucent={true} backgroundColor={'transparent'}
         />
 
         <View style={{top: '100%', flexDirection: 'row', justifyContent: 'space-evenly'}}>

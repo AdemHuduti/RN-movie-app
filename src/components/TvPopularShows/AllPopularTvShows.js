@@ -65,7 +65,7 @@ class AllPopularTvShows extends Component {
         style={{ flex: 1 }}
       >
         <StatusBar
-          backgroundColor="transparent"
+          translucent={true} backgroundColor={'transparent'}
           barStyle="light-content"
         />
         <View style={{ top: '3%', marginBottom: 50 }}>

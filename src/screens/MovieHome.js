@@ -19,7 +19,7 @@ class App extends Component {
         style={{ flex: 1 }}
       >
         <StatusBar
-          backgroundColor="transparent"
+          translucent={true} backgroundColor={'transparent'}
           barStyle="light-content"
         />
       <TouchableOpacity onPress={() => navigate('Choose')}>

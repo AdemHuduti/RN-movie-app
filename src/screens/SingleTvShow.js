@@ -34,6 +34,7 @@ class SingleTvShow extends Component {
 
   render() {
     const { singleTvShow } = this.state;
+    console.log(singleTvShow)
     return (
       <LinearGradient
         start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }}
@@ -80,7 +81,7 @@ class SingleTvShow extends Component {
                       name="star"
                       color={'rgb(218,165,32)'} />
                     <Text style={styles.voteAverage}>{singleTvShow.vote_average}</Text>
-                    <Text style={styles.runtimeInfoText}>Runtime: {singleTvShow.runtime}min</Text>
+                    {/* <Text style={styles.runtimeInfoText}>Runtime: {singleTvShow.runtime}min</Text> */}
                   </View>
                   :
                   <ActivityIndicator size="large" color="#fff" />

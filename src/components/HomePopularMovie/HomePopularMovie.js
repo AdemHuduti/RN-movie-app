@@ -51,8 +51,8 @@ class HomePopularMovie extends Component {
         style={{ flex: 1}}
       >
         <StatusBar
-          backgroundColor="transparent"
           barStyle="light-content"
+          translucent={true} backgroundColor={'transparent'}
         />
         <View style={{top: '10%',  marginBottom: 50 }}>
           <Text style={styles.popularMovieTitle}>Popular movies</Text>
