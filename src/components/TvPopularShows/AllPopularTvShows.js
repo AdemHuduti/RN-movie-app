@@ -42,9 +42,9 @@ class AllPopularTvShows extends Component {
             style={styles.imageStyle}
             source={{ uri: `https://image.tmdb.org/t/p/w300${show.poster_path}` }}
           />
-          <View style={styles.viewMovie}>
-            <Text style={styles.movieTitle}>{show.name}</Text>
-            <Text style={styles.movieOverview}>{show.overview.substring(0, 150) + '...'}</Text>
+          <View style={styles.viewTvShowBox}>
+            <Text style={styles.tvShowTitle}>{show.name}</Text>
+            <Text style={styles.tvShowOverview}>{show.overview.substring(0, 150) + '...'}</Text>
             <View style={styles.detailInfo}>
 
             </View>

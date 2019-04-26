@@ -1,5 +1,11 @@
 export default {
-  movieTitle: {
+  showMainTitle: {
+    color: '#fff',
+    paddingBottom: 20,
+    fontSize: 16,
+    paddingLeft: 20
+  },
+  showTitle: {
     fontSize: 14,
     fontWeight: '400',
     textAlign: 'center',
@@ -11,22 +17,15 @@ export default {
     alignSelf: 'center', 
     marginRight: 15,
   },
-  viewMovie: {
+  viewShow: {
     width: 100,
     paddingTop: 20,
-    paddingBottom: 10,
-  },
-  onTvMoviesTitle: {
-    color: '#fff',
     paddingBottom: 20,
-    fontSize: 16,
-    paddingLeft: 20
   },
-  onTvMoviesButton: {
-    flexDirection: 'row',
-    justifyContent: 'center'
-  },
-  onTvMoviesButtonText: {
-    color: '#fff'
+  viewMoreButton: {
+    color: '#fff', 
+    alignSelf: 'center',
+    paddingTop: 10,
+    paddingBottom: 10,
   }
 }

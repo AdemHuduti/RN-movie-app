@@ -14,7 +14,7 @@ class HomeUpcomingPopularMovie extends Component {
   getUpcomingHomeMovies() {
     const { showHomeUpcomingMovies } = this.props;
     if (!showHomeUpcomingMovies.length) {
-      APIService.getUpcomingHomeMovies()
+      APIService.getUpcomingMovies()
         .then(response => {
           this.loadUpcomingMovies(response.data)
         })
@@ -23,19 +23,28 @@ class HomeUpcomingPopularMovie extends Component {
 
   loadUpcomingMovies = (data) => this.props.dispatch({ type: 'GET_UPCOMING_MOVIES_FOR_HOME_SCREEN', data });
 
+  showSingleMovie(id) {
+    this.props.navigation.navigate('SingleMovie', {
+      id
+    })
+  }
+
   renderMovies() {
     const { showHomeUpcomingMovies } = this.props;
     return showHomeUpcomingMovies.map((movie, i) => {
       return (
         <View key={i}>
-          <Image
-            resizeMode="cover"
-            style={styles.imageStyle}
-            source={{ uri: `https://image.tmdb.org/t/p/w300${movie.poster_path}` }}
-          />
-          <View style={styles.viewMovie}>
-            <Text style={styles.movieTitle}>{movie.title}</Text>
-          </View>
+          <TouchableOpacity onPress={() => this.showSingleMovie(movie.id)} >
+
+            <Image
+              resizeMode="cover"
+              style={styles.imageStyle}
+              source={{ uri: `https://image.tmdb.org/t/p/w300${movie.poster_path}` }}
+            />
+            <View style={styles.viewMovie}>
+              <Text style={styles.movieTitle}>{movie.title}</Text>
+            </View>
+          </TouchableOpacity>
         </View>
       );
     });
@@ -53,7 +62,7 @@ class HomeUpcomingPopularMovie extends Component {
           translucent={true} backgroundColor={'transparent'}
           barStyle="light-content"
         />
-        <View style={{top: '10%', marginBottom: 50}}>
+        <View style={{ top: '10%', marginBottom: 50 }}>
           <Text style={styles.popularMovieTitle}>Upcoming movies</Text>
           <ScrollView horizontal={true}>
             {this.renderMovies()}

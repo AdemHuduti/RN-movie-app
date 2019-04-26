@@ -24,19 +24,28 @@ class PopularShowsHome extends Component {
 
   loadPopularTVShows = (data) => this.props.dispatch({ type: 'GET_POPULAR_TV_SHOWS_FOR_HOME_SCREEN', data });
 
-  renderMovies() {
+  showSingleTvShow(id) {
+    this.props.navigation.navigate('SingleTvShow', {
+      id
+    })
+  }
+
+  renderShows() {
     const { showTvShows } = this.props;
-    return showTvShows.map((movie, i) => {
+    return showTvShows.map((show, i) => {
       return (
         <View key={i}>
-          <Image
-            resizeMode="cover"
-            style={styles.imageStyle}
-            source={{ uri: `https://image.tmdb.org/t/p/w300${movie.poster_path}` }}
-          />
-          <View style={styles.viewMovie}>
-            <Text style={styles.movieTitle}>{movie.name}</Text>
-          </View>
+          <TouchableOpacity onPress={() => this.showSingleTvShow(show.id)} >
+
+            <Image
+              resizeMode="cover"
+              style={styles.imageStyle}
+              source={{ uri: `https://image.tmdb.org/t/p/w300${show.poster_path}` }}
+            />
+            <View style={styles.viewShow}>
+              <Text style={styles.showTitle}>{show.name}</Text>
+            </View>
+          </TouchableOpacity>
         </View>
       );
     });
@@ -54,13 +63,13 @@ class PopularShowsHome extends Component {
           translucent={true} backgroundColor={'transparent'}
           barStyle="light-content"
         />
-        <View style={{top: '10%', marginBottom: 50}}>
-          <Text style={styles.onTvMoviesTitle}>Popular tv shows</Text>
+        <View style={{ top: '10%', marginBottom: 50 }}>
+          <Text style={styles.showMainTitle}>Popular tv shows</Text>
           <ScrollView horizontal={true}>
-            {this.renderMovies()}
+            {this.renderShows()}
           </ScrollView>
-          <TouchableOpacity style={styles.popularMoviesButton} onPress={() => navigate('AllPopularTvShows')}>
-            <Text style={{color: '#fff', alignSelf: 'center'}}>View all popular tv shows</Text>
+          <TouchableOpacity onPress={() => navigate('AllPopularTvShows')}>
+            <Text style={styles.viewMoreButton}>View all popular tv shows</Text>
           </TouchableOpacity>
         </View>
       </LinearGradient>

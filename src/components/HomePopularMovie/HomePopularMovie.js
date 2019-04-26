@@ -14,7 +14,7 @@ class HomePopularMovie extends Component {
   getPopularHomeMovies() {
     const { showHomePopularMovies } = this.props;
     if (!showHomePopularMovies.length) {
-      APIService.getPopularHomeMovies()
+      APIService.getPopularMovies()
         .then(response => {
           this.loadMovies(response.data)
         })
@@ -23,19 +23,27 @@ class HomePopularMovie extends Component {
 
   loadMovies = (data) => this.props.dispatch({ type: 'GET_MOVIES_FOR_HOME_SCREEN', data });
 
+  showSingleMovie(id) {
+    this.props.navigation.navigate('SingleMovie', {
+      id
+    })
+  }
+
   renderMovies() {
     const { showHomePopularMovies } = this.props;
     return showHomePopularMovies.map((movie, i) => {
       return (
         <View key={i}>
-          <Image
-            resizeMode="cover"
-            style={styles.imageStyle}
-            source={{ uri: `https://image.tmdb.org/t/p/w300${movie.poster_path}` }}
-          />
-          <View style={styles.viewMovie}>
-            <Text style={styles.movieTitle}>{movie.title}</Text>
-          </View>
+          <TouchableOpacity onPress={() => this.showSingleMovie(movie.id)}>
+            <Image
+              resizeMode="cover"
+              style={styles.imageStyle}
+              source={{ uri: `https://image.tmdb.org/t/p/w300${movie.poster_path}` }}
+              />
+            <View style={styles.viewMovie}>
+              <Text style={styles.movieTitle}>{movie.title}</Text>
+            </View>
+          </TouchableOpacity>
         </View>
       );
     });

@@ -16,7 +16,7 @@ class UpcomingAllMovies extends Component {
   getUpcomingHomeMovies() {
     const { upcomingMovies } = this.props;
     if (!upcomingMovies.length) {
-      APIService.getUpcomingHomeMovies()
+      APIService.getUpcomingMovies()
         .then(response => {
           this.loadUpcomingMovies(response.data)
         })

@@ -1,5 +1,5 @@
 export default {
-  movieTitle: {
+  tvShowTitle: {
     fontSize: 22,
     fontWeight: '400',
     textAlign: 'center',
@@ -12,7 +12,7 @@ export default {
     alignSelf: 'center', 
     zIndex: 1
   },
-  viewMovie: {
+  viewTvShowBox: {
     width: '80%',
     left: '10%',
     marginTop: 20,
@@ -23,7 +23,7 @@ export default {
     top: -80,
     paddingHorizontal: 20
   },
-  movieOverview: {
+  tvShowOverview: {
     color: '#fff'
   },
   detailInfo: {

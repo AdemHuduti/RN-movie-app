@@ -16,7 +16,7 @@ class Movies extends Component {
   getPopularHomeMovies() {
     const { showMovies } = this.props;
     if (!showMovies.length) {
-      APIService.getPopularHomeMovies()
+      APIService.getPopularMovies()
         .then(response => {
           this.loadMovies(response.data)
         })

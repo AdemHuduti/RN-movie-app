@@ -34,13 +34,13 @@ const AIRING_TODAY = `${TV_SHOW_URL}airing_today?api_key=${API_KEY}&language=en-
 
 
 export default {
-  getPopularHomeMovies() {
+  getPopularMovies() {
     return axios({
       method: "GET",
       url: POPULAR_MOVIES
     })
   },
-  getUpcomingHomeMovies() {
+  getUpcomingMovies() {
     return axios({
       method: "GET",
       url: UPCOMING_MOVIES
