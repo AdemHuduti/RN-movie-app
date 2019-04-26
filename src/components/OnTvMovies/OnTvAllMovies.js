@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Image } from 'react-native';
-import AllTvMoviesStyle from './AllTvMoviesStyle';
+import AllTvMoviesStyle from '../../styles/globalStyleForAllMovies';
 import APIService from '../../APIService';
 import LinearGradient from 'react-native-linear-gradient';
 import { connect } from 'react-redux';

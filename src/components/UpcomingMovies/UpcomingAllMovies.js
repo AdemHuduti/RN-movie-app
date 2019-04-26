@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Image } from 'react-native';
-import UpcomingMovieStyle from './allMovieStyle';
+import UpcomingMovieStyle from '../../styles/globalStyleForAllMovies';
 import APIService from '../../APIService';
 import LinearGradient from 'react-native-linear-gradient';
 import { connect } from 'react-redux';
@@ -10,10 +10,10 @@ import MainMenu from '../MainMenu';
 
 class UpcomingAllMovies extends Component {
   componentDidMount() {
-    this.getUpcomingHomeMovies()
+    this.getUpcomingAllMovies()
   }
 
-  getUpcomingHomeMovies() {
+  getUpcomingAllMovies() {
     const { upcomingMovies } = this.props;
     if (!upcomingMovies.length) {
       APIService.getUpcomingMovies()

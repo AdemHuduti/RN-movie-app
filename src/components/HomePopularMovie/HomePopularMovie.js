@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Image } from 'react-native';
-import PopularMovieStyle from './style';
+import PopularMovieStyle from '../../styles/homeScreenMoviesStyle';
 import APIService from '../../APIService';
 import LinearGradient from 'react-native-linear-gradient';
 import { connect } from 'react-redux';
@@ -63,12 +63,12 @@ class HomePopularMovie extends Component {
           translucent={true} backgroundColor={'transparent'}
         />
         <View style={{top: '10%',  marginBottom: 50 }}>
-          <Text style={styles.popularMovieTitle}>Popular movies</Text>
+          <Text style={styles.mainTitle}>Popular movies</Text>
           <ScrollView horizontal={true}>
             {this.renderMovies()}
           </ScrollView>
-          <TouchableOpacity style={styles.popularMoviesButton} onPress={() => navigate('PopularMovies')}>
-            <Text style={styles.popularMoviesButtonText}>View all popular movies</Text>
+          <TouchableOpacity style={styles.moviesButton} onPress={() => navigate('PopularMovies')}>
+            <Text style={styles.moviesButtonText}>View all popular movies</Text>
           </TouchableOpacity>
         </View>
       </LinearGradient>

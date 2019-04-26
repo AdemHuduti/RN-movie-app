@@ -1,4 +1,11 @@
 export default {
+  mainTitle: {
+    color: '#fff',
+    paddingBottom: 30,
+    fontSize: 18,
+    // paddingLeft: 20
+    textAlign: 'center'
+  },
   movieTitle: {
     fontSize: 14,
     fontWeight: '400',
@@ -16,17 +23,14 @@ export default {
     paddingTop: 20,
     paddingBottom: 10,
   },
-  popularMovieTitle: {
-    color: '#fff',
-    paddingBottom: 20,
-    fontSize: 16,
-    paddingLeft: 20
-  },
-  popularMoviesButton: {
+  moviesButton: {
     flexDirection: 'row',
     justifyContent: 'center'
   },
-  popularMoviesButtonText: {
-    color: '#fff'
-  }
+  moviesButtonText: {
+    color: '#fff',
+    paddingBottom: 14,
+    paddingTop: 14,
+    textAlign: 'center'
+  } 
 }

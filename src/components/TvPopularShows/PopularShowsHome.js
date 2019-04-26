@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Image } from 'react-native';
-import PopularShowsStyle from './style';
+import PopularShowsStyle from '../../styles/homeScreenTvShowsStyle';
 import APIService from '../../APIService';
 import LinearGradient from 'react-native-linear-gradient';
 import { ScrollView } from 'react-native-gesture-handler';

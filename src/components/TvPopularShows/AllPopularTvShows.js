@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Image } from 'react-native';
-import PopularTvShowStyle from './AllPopularTvShowsStyle';
+import PopularTvShowStyle from '../../styles/globalStyleForAllTvShows';
 import APIService from '../../APIService';
 import LinearGradient from 'react-native-linear-gradient';
 import { connect } from 'react-redux';

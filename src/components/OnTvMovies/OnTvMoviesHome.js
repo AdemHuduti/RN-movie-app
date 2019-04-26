@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Image } from 'react-native';
-import OnTvMoviesStyle from './style';
+import OnTvMoviesStyle from '../../styles/homeScreenMoviesStyle';
 import APIService from '../../APIService';
 import LinearGradient from 'react-native-linear-gradient';
 import { connect } from 'react-redux';
@@ -64,12 +64,12 @@ class OnTvMoviesHome extends Component {
           barStyle="light-content"
         />
         <View style={{ top: '10%', marginBottom: 50 }}>
-          <Text style={styles.onTvMoviesTitle}>On TV movies</Text>
+          <Text style={styles.mainTitle}>On TV movies</Text>
           <ScrollView horizontal={true}>
             {this.renderMovies()}
           </ScrollView>
-          <TouchableOpacity style={styles.onTvMoviesButton} onPress={() => navigate('AllOnTvMovies')}>
-            <Text style={styles.onTvMoviesButtonText}>View all on tv movies</Text>
+          <TouchableOpacity style={styles.moviesButton} onPress={() => navigate('AllOnTvMovies')}>
+            <Text style={styles.moviesButtonText}>View all on tv movies</Text>
           </TouchableOpacity>
         </View>
       </LinearGradient>
