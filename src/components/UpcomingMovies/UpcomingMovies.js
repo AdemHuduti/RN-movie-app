@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Image } from 'react-native';
-import UpcomingMovieStyle from './style';
 import APIService from '../../APIService';
 import LinearGradient from 'react-native-linear-gradient';
 import { connect } from 'react-redux';
 import { ScrollView } from 'react-native-gesture-handler';
+
+import UpcomingMovieStyle from '../../styles/homeScreenMoviesStyle';
 
 class HomeUpcomingPopularMovie extends Component {
   componentDidMount() {
@@ -63,12 +64,12 @@ class HomeUpcomingPopularMovie extends Component {
           barStyle="light-content"
         />
         <View style={{ top: '10%', marginBottom: 50 }}>
-          <Text style={styles.popularMovieTitle}>Upcoming movies</Text>
+          <Text style={styles.mainTitle}>Upcoming movies</Text>
           <ScrollView horizontal={true}>
             {this.renderMovies()}
           </ScrollView>
-          <TouchableOpacity style={styles.popularMoviesButton} onPress={() => navigate('UpcomingAllMovies')}>
-            <Text style={styles.popularMoviesButtonText}>View all upcoming movies</Text>
+          <TouchableOpacity style={styles.moviesButton} onPress={() => navigate('UpcomingAllMovies')}>
+            <Text style={styles.moviesButtonText}>View all upcoming movies</Text>
           </TouchableOpacity>
         </View>
       </LinearGradient>

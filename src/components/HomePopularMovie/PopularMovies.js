@@ -6,7 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import MainMenu from '../../components/MainMenu';
 import MainNavbar from '../../components/MainNavBar';
 
-import style from './allPopularMovieStyle';
+import style from '../../styles/globalStyleForAllMovies';
 
 class Movies extends Component {
   componentDidMount() {

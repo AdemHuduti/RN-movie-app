@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Image } from 'react-native';
-import TopRatedMovieStyle from './style';
+import TopRatedMovieStyle from '../../styles/homeScreenMoviesStyle';
 import APIService from '../../APIService';
 import LinearGradient from 'react-native-linear-gradient';
 import { connect } from 'react-redux';
@@ -63,12 +63,12 @@ class TopRatedMovieHome extends Component {
           barStyle="light-content"
         />
         <View style={{ top: '10%', marginBottom: 50 }}>
-          <Text style={styles.topRatedMovieTitle}>Top rated movies</Text>
+          <Text style={styles.mainTitle}>Top rated movies</Text>
           <ScrollView horizontal={true}>
             {this.renderMovies()}
           </ScrollView>
-          <TouchableOpacity style={styles.topRatedMoviesButton} onPress={() => navigate('AllTopRatedMovies')}>
-            <Text style={styles.topRatedMoviesButtonText}>View all top rated movies</Text>
+          <TouchableOpacity style={styles.moviesButton} onPress={() => navigate('AllTopRatedMovies')}>
+            <Text style={styles.moviesButtonText}>View all top rated movies</Text>
           </TouchableOpacity>
         </View>
       </LinearGradient>
