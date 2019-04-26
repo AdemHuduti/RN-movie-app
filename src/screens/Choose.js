@@ -23,7 +23,7 @@ class Choose extends Component {
             <Text style={styles.seeMoreButtonTexy}>See Movies</Text>
           </TouchableOpacity>
           
-          <TouchableOpacity style={styles.seeMoreButton}>
+          <TouchableOpacity style={styles.seeMoreButton} onPress={() => navigate('TvShowHome')}>
             <Text>See TV Shows</Text>
           </TouchableOpacity>
 

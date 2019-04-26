@@ -7,9 +7,14 @@ import ShowUpcomingHome from './ShowUpcomingMoviesHome';
 import ShowToRatedHome from './ShowTopRatedMovies';
 import OnTvMoviesHome from './ShowOnTvMoviesHome';
 import OnTvMovies from './ShowAllOnTvMoviesReducer'
+
+import TvShowHome from './TvShowsHome';
+import AllTvShows from './TvAllPopularShowsReducer';
+
 import menu from './Menu';
 
 export default combineReducers({
+  // Movies
   showMovies: ShowAllPopularMovies,
   showHomePopularMovies: ShowPopularHome,
   upcomingMovies: ShowUpcomingMovies,
@@ -17,7 +22,13 @@ export default combineReducers({
   showTopRatedMovies: ShowToRatedHome,
   showAllTopRated: ShowAllTopRatedMovies,
   onTvMoives: OnTvMoviesHome,
+  allOnTvMovies: OnTvMovies,
+  
+  // Tv shows
+  showTvShows: TvShowHome,
+  showAllTvShows: AllTvShows,
+  
+  // Menu
   menuIsOpen: menu.menuIsOpen,
-  allOnTvMovies: OnTvMovies
   // state: (state = {}) => state
 });

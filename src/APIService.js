@@ -58,11 +58,22 @@ export default {
       url: ON_TV_MOVIES
     })
   },
-
   getMoviesById(id) {
     return axios({
       method: "GET",
       url: `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
     })
-  }
+  },
+  getPopularTvShows() {
+    return axios({
+      method: "GET",
+      url: URL_TV
+    })
+  },
+  getShowsById(id) {
+    return axios({
+      method: "GET",
+      url: `https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}&language=en-US&page=1`
+    })
+  },
 }

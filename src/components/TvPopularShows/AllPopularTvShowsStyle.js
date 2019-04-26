@@ -3,7 +3,7 @@ export default {
     fontSize: 22,
     fontWeight: '400',
     textAlign: 'center',
-    color: 'red',
+    color: '#fff',
     paddingBottom: 16
   },
   imageStyle: {
@@ -44,9 +44,5 @@ export default {
     alignSelf: 'center',
     padding: 8,
     borderRadius: 10 
-  },
-  seeMoreButton: {
-    backgroundColor: '#fff',
-    padding: 10
-  },
+  }
 }

@@ -3,37 +3,37 @@ import { View, Text, Image, StyleSheet, ActivityIndicator, ScrollView } from 're
 import APIService from '../APIService';
 import { connect } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
-import singleMovieStyle from './singleMovieStyle';
+import singleTvShowStyle from './singleTvShowStyle';
 import Icon from "react-native-vector-icons/AntDesign";
 import MainMenu from '../components/MainMenu';
 import MainNavbar from '../components/MainNavBar';
 import moment from 'moment';
 
-class SingleMovie extends Component {
+class SingleTvShow extends Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
-      singleMovie: {}
+      singleTvShow: {}
     }
   }
 
   componentWillMount() {
     const id = this.props.navigation.getParam('id');
-    this.getSingleMovie(id)
+    this.getShowsById(id)
   };
 
-  getSingleMovie() {
+  getShowsById() {
     const id = this.props.navigation.getParam('id');
-    APIService.getMoviesById(id)
-      .then(res => this.setState({ singleMovie: res.data }))
+    APIService.getShowsById(id)
+      .then(res => this.setState({ singleTvShow: res.data }))
   }
 
-  toggleMainMenu = () => this.props.dispatch({type: 'TOGGLE_MENU'});
-  
+  toggleMainMenu = () => this.props.dispatch({ type: 'TOGGLE_MENU' });
+
   render() {
-    const { singleMovie } = this.state;
+    const { singleTvShow } = this.state;
     return (
       <LinearGradient
         start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }}
@@ -50,7 +50,7 @@ class SingleMovie extends Component {
           <MainNavbar
             navigation={this.props.navigation}
             navbarColor='white'
-            title="Movie info"
+            title="Tv show info"
           />
           <ScrollView>
             <View style={{ marginBottom: 200 }}>
@@ -58,72 +58,72 @@ class SingleMovie extends Component {
                 <Image
                   resizeMode="cover"
                   style={styles.backdropImage}
-                  source={{ uri: `https://image.tmdb.org/t/p/w300${singleMovie.backdrop_path}` }}
+                  source={{ uri: `https://image.tmdb.org/t/p/w300${singleTvShow.backdrop_path}` }}
                 />
               </View>
 
-              <View style={styles.movieDetailBox}>
+              <View style={styles.mainDetailBox}>
                 <Image
                   resizeMode="contain"
                   style={styles.posterImage}
-                  source={{ uri: `https://image.tmdb.org/t/p/w300${singleMovie.poster_path}` }}
+                  source={{ uri: `https://image.tmdb.org/t/p/w300${singleTvShow.poster_path}` }}
                 />
               </View>
 
               {
-                singleMovie.genres && singleMovie.genres.length ?
+                singleTvShow.genres && singleTvShow.genres.length ?
                   <View style={styles.parent}>
-                    <Text style={styles.genres}>{singleMovie.genres.map((g, i) => i === singleMovie.genres.length - 1 ? g.name : g.name + ", ")}</Text>
+                    <Text style={styles.genres}>{singleTvShow.genres.map((g, i) => i === singleTvShow.genres.length - 1 ? g.name : g.name + ", ")}</Text>
                     <Icon
                       style={styles.iconStar}
                       size={20}
                       name="star"
                       color={'rgb(218,165,32)'} />
-                    <Text style={styles.voteAverage}>{singleMovie.vote_average}</Text>
-                    <Text style={styles.runtimeInfoText}>Runtime: {singleMovie.runtime}min</Text>
+                    <Text style={styles.voteAverage}>{singleTvShow.vote_average}</Text>
+                    <Text style={styles.runtimeInfoText}>Runtime: {singleTvShow.runtime}min</Text>
                   </View>
                   :
                   <ActivityIndicator size="large" color="#fff" />
               }
 
               <View style={styles.boxInfo}>
-                <Text style={styles.singleMovieTitle}>{singleMovie.title}</Text>
-                <Text style={styles.movieOverview}>{singleMovie.overview}</Text>
+                <Text style={{
+                  fontSize: 24,
+                  color: "#fff",
+                  marginTop: 34,
+                  marginBottom: 24
+                }}>{singleTvShow.name}</Text>
+                <Text style={styles.mainOverview}>{singleTvShow.overview}</Text>
               </View>
 
               <View style={styles.info}>
-                <Text style={{ color: '#fff' }}>Popularity: {singleMovie.popularity}</Text>
-                <Text style={{ color: '#fff' }}>Release date: {moment(singleMovie.release_date).format('DD.MM.YYYY')}</Text>
+                <Text style={{ color: '#fff' }}>Popularity: {singleTvShow.popularity}</Text>
+                <Text style={{ color: '#fff' }}>Release date: {moment(singleTvShow.first_air_date).format('DD.MM.YYYY')}</Text>
               </View>
 
-
               {
-                singleMovie.spoken_languages && singleMovie.spoken_languages.length ?
+                singleTvShow.spoken_languages && singleTvShow.spoken_languages.length ?
                   <View>
                     <Text style={styles.spokenLanguagesTitle}>Spoken Languages</Text>
                     <Text style={styles.spokenLanguages}>
-                      {singleMovie.spoken_languages.map((language, i) => i === singleMovie.genres.length - 1 ? language.name : language.name + ", ")}
+                      {singleTvShow.spoken_languages.map((language, i) => i === singleTvShow.genres.length - 1 ? language.name : language.name + ", ")}
                     </Text>
                   </View>
                   :
                   null
               }
             </View>
-
           </ScrollView>
-
         </View>
       </LinearGradient>
-
-
     );
   };
 };
 
-const styles = StyleSheet.create(singleMovieStyle);
+const styles = StyleSheet.create(singleTvShowStyle);
 
 const mapStateToProps = (state) => ({
   menuIsOpen: state.menuIsOpen,
 });
 
-export default connect(mapStateToProps)(SingleMovie);
+export default connect(mapStateToProps)(SingleTvShow);
