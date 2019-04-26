@@ -1,6 +1,6 @@
 # React Native Movie Application
 
-*A sample movie app using react native for iOS & Android*
+*A sample movie app using react native for iOS*
 
 ## Installation
 
@@ -12,22 +12,9 @@
 npm install
 ```
 
-*Before run android build, setup [Android Studio](https://facebook.github.io/react-native/docs/android-setup.html)*
-
-**Step 3:** If Android
-
-**First run command**
-```
-react-native start
-```
-**After, open a new tab in the same terminal(ctrl+T), then run command:**
-```
-react-native run-android
-```
-
 *Before running iOS build, Install [Xcode](https://developer.apple.com/xcode/download/)*
 
-**Step 4:** If iOS
+**Step 4:** iOS
 
 **First run command**
 ```
