@@ -53,8 +53,8 @@ class SingleMovie extends Component {
             title="Movie info"
           />
           <ScrollView>
-            <View style={{ marginBottom: 150 }}>
-              <View style={{ top: '10%' }}>
+            <View style={{ marginBottom: 200 }}>
+              <View style={{ top: '10%', }}>
                 <Image
                   resizeMode="cover"
                   style={styles.backdropImage}

@@ -5,6 +5,7 @@ const API_KEY = 'b6ae17c5481c2abdc5c03bc07d7186e7';
 const MOVIE_URL = 'https://api.themoviedb.org/3/movie/';
 const TV_SHOW_URL = 'https://api.themoviedb.org/3/tv/';
 
+// MOVIES
 // Top rated movies
 const TOP_RATED_MOVIES = `${MOVIE_URL}top_rated?api_key=${API_KEY}&language=en-US&page=1`
 
@@ -26,9 +27,10 @@ const URL_TV = `${TV_SHOW_URL}popular?api_key=${API_KEY}&language=en-US&page=1`
 const TOP_RATED_TV = `${TV_SHOW_URL}top_rated?api_key=${API_KEY}&language=en-US&page=1`
 
 // On TV
-const ON_TV = `${TV_SHOW_URL}on_the_air?api_key=${API_KEY}&language=en-US&page=1`
+const ON_TV_SHOWS = `${TV_SHOW_URL}on_the_air?api_key=${API_KEY}&language=en-US&page=1`
 
 // Airing today
+const AIRING_TODAY = `${TV_SHOW_URL}airing_today?api_key=${API_KEY}&language=en-US&page=1`
 
 
 export default {
@@ -48,6 +50,12 @@ export default {
     return axios({
       method: "GET",
       url: TOP_RATED_MOVIES
+    })
+  },
+  getOnTvMovies() {
+    return axios({
+      method: "GET",
+      url: ON_TV_MOVIES
     })
   },
 

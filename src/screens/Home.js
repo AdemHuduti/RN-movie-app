@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import HomePopularMovie from '../components/HomePopularMovie/HomePopularMovie';
 import HomeUpcomingMovies from '../components/UpcomingMovies/UpcomingMovies';
 import TopRatedMovieHome from '../components/TopRatedMovies/TopRatedMovieHome';
+import OnTvMoviesHome from '../components/OnTvMovies/OnTvMoviesHome';
 import { ScrollView } from 'react-native-gesture-handler';
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
           <HomePopularMovie navigation={this.props.navigation}/>
           <HomeUpcomingMovies navigation={this.props.navigation}/>
           <TopRatedMovieHome navigation={this.props.navigation}/>
+          <OnTvMoviesHome navigation={this.props.navigation}/>
         </ScrollView>
         
       </LinearGradient>
