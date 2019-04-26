@@ -1,6 +1,7 @@
 export default {
   backdropImage: {
     height: 260,
+    width: '100%',
     justifyContent: 'center',
   },
   movieDetailBox: {
@@ -8,20 +9,21 @@ export default {
   },
   posterImage: {
     height: 150,
+    // width: 150,
     right: '32%',
-    top: '30%',
-    marginBottom: 10
+    top: '-30%',
   },
   genres: {
     color: '#fff',
     paddingLeft: 130,
     paddingRight: 15,
-    bottom: 56,
-    fontSize: 12,
+    bottom: 35,
+    fontSize: 13,
   },
   parent: {
     position: 'relative',
     display: 'flex',
+    bottom: 100,
     justifyContent: 'center'
   },
   iconStar: {
@@ -42,6 +44,7 @@ export default {
   },
   boxInfo: {
     paddingHorizontal: 20,
+    bottom: 80,
   },
   singleMovieTitle: {
     fontSize: 24,
@@ -55,25 +58,20 @@ export default {
   },
   info: {
     paddingHorizontal: 20,
-    paddingTop: 20,
     flexDirection: 'row',
-    justifyContent: 'space-between'
-  },
-  spokenLanguages: {
-    color: '#fff',
-    paddingHorizontal: 20,
-    flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    bottom: 50,
   },
   spokenLanguagesTitle: {
     color: '#fff',
-    marginTop: 20,
-    marginBottom: 20,
     alignSelf: 'center',
-    fontSize: 18
+    fontSize: 18,
+    bottom: 20,
   },
   spokenLanguages: {
     textAlign: 'center',
-    color: '#fff'
+    color: '#fff',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
 }

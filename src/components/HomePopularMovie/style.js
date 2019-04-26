@@ -28,7 +28,9 @@ export default {
     justifyContent: 'center'
   },
   popularMoviesButtonText: {
-    color: '#fff'
+    color: '#fff',
+    paddingBottom: 14,
+    paddingTop: 14
   },
   
   

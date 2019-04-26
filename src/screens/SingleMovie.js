@@ -54,13 +54,11 @@ class SingleMovie extends Component {
           />
           <ScrollView>
             <View style={{ marginBottom: 200 }}>
-              <View style={{ top: '10%', }}>
-                <Image
-                  resizeMode="cover"
-                  style={styles.backdropImage}
-                  source={{ uri: `https://image.tmdb.org/t/p/w300${singleMovie.backdrop_path}` }}
-                />
-              </View>
+              <Image
+                resizeMode="contain"
+                style={styles.backdropImage}
+                source={{ uri: `https://image.tmdb.org/t/p/w300${singleMovie.backdrop_path}` }}
+              />
 
               <View style={styles.movieDetailBox}>
                 <Image
@@ -102,7 +100,7 @@ class SingleMovie extends Component {
                   <View>
                     <Text style={styles.spokenLanguagesTitle}>Spoken Languages</Text>
                     <Text style={styles.spokenLanguages}>
-                      {singleMovie.spoken_languages.map((language, i) => i === singleMovie.genres.length - 1 ? language.name : language.name + ", ")}
+                      {singleMovie.spoken_languages.map((language, i) => i === singleMovie.spoken_languages.length - 1 ? language.name : language.name + ", ")}
                     </Text>
                   </View>
                   :

@@ -55,13 +55,11 @@ class SingleTvShow extends Component {
           />
           <ScrollView>
             <View style={{ marginBottom: 200 }}>
-              <View style={{ top: '10%', }}>
                 <Image
                   resizeMode="cover"
                   style={styles.backdropImage}
                   source={{ uri: `https://image.tmdb.org/t/p/w300${singleTvShow.backdrop_path}` }}
                 />
-              </View>
 
               <View style={styles.mainDetailBox}>
                 <Image
@@ -81,7 +79,7 @@ class SingleTvShow extends Component {
                       name="star"
                       color={'rgb(218,165,32)'} />
                     <Text style={styles.voteAverage}>{singleTvShow.vote_average}</Text>
-                    {/* <Text style={styles.runtimeInfoText}>Runtime: {singleTvShow.runtime}min</Text> */}
+                    <Text style={styles.runtimeInfoText}>Runtime: {singleTvShow.episode_run_time}min</Text>
                   </View>
                   :
                   <ActivityIndicator size="large" color="#fff" />
@@ -103,11 +101,11 @@ class SingleTvShow extends Component {
               </View>
 
               {
-                singleTvShow.spoken_languages && singleTvShow.spoken_languages.length ?
+                singleTvShow.languages && singleTvShow.languages.length ?
                   <View>
                     <Text style={styles.spokenLanguagesTitle}>Spoken Languages</Text>
                     <Text style={styles.spokenLanguages}>
-                      {singleTvShow.spoken_languages.map((language, i) => i === singleTvShow.genres.length - 1 ? language.name : language.name + ", ")}
+                      {singleTvShow.languages.map((language, i) => i === singleTvShow.languages.length - 1 ? language : language + ", ")}
                     </Text>
                   </View>
                   :

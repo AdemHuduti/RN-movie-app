@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { StatusBar, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import style from './style';
 import LinearGradient from 'react-native-linear-gradient';
+import AntIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import EntypoIcon from "react-native-vector-icons/Entypo";
+import style from './style';
 
 class Choose extends Component {
 
@@ -17,18 +19,20 @@ class Choose extends Component {
           barStyle="light-content"
           translucent={true} backgroundColor={'transparent'}
         />
-
+        <Text style={{color:'white', top: '35%', textAlign: 'center', fontSize: 24}}>Pick something</Text>
         <View style={{top: '100%', flexDirection: 'row', justifyContent: 'space-evenly'}}>
-          <TouchableOpacity style={styles.seeMoreButton} onPress={() => navigate('MovieHome')}>
-            <Text style={styles.seeMoreButtonTexy}>See Movies</Text>
+          <TouchableOpacity onPress={() => navigate('MovieHome')}>
+            <AntIcon name="movie" size={44} color="#fff" />
+            <Text style={{color: '#fff', paddingTop: 10}}>Movies</Text>
           </TouchableOpacity>
           
-          <TouchableOpacity style={styles.seeMoreButton} onPress={() => navigate('TvShowHome')}>
-            <Text>See TV Shows</Text>
+          <TouchableOpacity  onPress={() => navigate('TvShowHome')}>
+          <EntypoIcon name="tv" size={44} color="#fff" />
+            <Text style={{color: '#fff', right: 10, paddingTop: 10}}>TV Shows</Text>
           </TouchableOpacity>
-
         </View>
-
+          
+        
       </LinearGradient>
     );
   }

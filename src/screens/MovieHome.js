@@ -22,17 +22,17 @@ class App extends Component {
           translucent={true} backgroundColor={'transparent'}
           barStyle="light-content"
         />
-      <TouchableOpacity onPress={() => navigate('Choose')}>
-        <AntIcon name="arrowleft" size={36} color="#fff" style={{top: '60%', marginBottom: 40, paddingLeft: 10}}/>
-      </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigate('Choose')}>
+          <AntIcon name="arrowleft" size={36} color="#fff" style={{ top: '60%', marginBottom: 40, paddingLeft: 10 }} />
+        </TouchableOpacity>
 
         <ScrollView>
-          <HomePopularMovie navigation={this.props.navigation}/>
-          <HomeUpcomingMovies navigation={this.props.navigation}/>
-          <TopRatedMovieHome navigation={this.props.navigation}/>
-          <OnTvMoviesHome navigation={this.props.navigation}/>
+          <HomePopularMovie navigation={this.props.navigation} />
+          <HomeUpcomingMovies navigation={this.props.navigation} />
+          <TopRatedMovieHome navigation={this.props.navigation} />
+          <OnTvMoviesHome navigation={this.props.navigation} />
         </ScrollView>
-        
+
       </LinearGradient>
     );
   }
