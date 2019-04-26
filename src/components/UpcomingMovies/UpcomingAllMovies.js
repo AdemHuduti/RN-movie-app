@@ -58,7 +58,6 @@ class UpcomingAllMovies extends Component {
   };
 
   render() {
-    const { upcomingMovies } = this.props;
     return (
       <LinearGradient
         start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }}
