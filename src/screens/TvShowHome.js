@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import AntIcon from "react-native-vector-icons/AntDesign";
 import { ScrollView } from 'react-native-gesture-handler';
 import PopularTvShowsHome from '../components/TvPopularShows/PopularShowsHome';
+import TopRatedShowsHome from '../components/TvTopRatedShows/TopRatedShowsHome';
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
 
         <ScrollView>
           <PopularTvShowsHome navigation={this.props.navigation}/>
+          <TopRatedShowsHome navigation={this.props.navigation}/>
         </ScrollView>
       </LinearGradient>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
 import PopularMovieStyle from '../../styles/homeScreenMoviesStyle';
 import APIService from '../../APIService';
 import LinearGradient from 'react-native-linear-gradient';
@@ -39,7 +39,7 @@ class HomePopularMovie extends Component {
               resizeMode="cover"
               style={styles.imageStyle}
               source={{ uri: `https://image.tmdb.org/t/p/w300${movie.poster_path}` }}
-              />
+            />
             <View style={styles.viewMovie}>
               <Text style={styles.movieTitle}>{movie.title}</Text>
             </View>
@@ -51,21 +51,24 @@ class HomePopularMovie extends Component {
 
   render() {
     const { navigate } = this.props.navigation;
-
+    const { showHomePopularMovies } = this.props;
     return (
       <LinearGradient
         start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }}
         colors={['#0f0c29', '#000', '#24243e']}
-        style={{ flex: 1}}
+        style={{ flex: 1 }}
       >
         <StatusBar
           barStyle="light-content"
           translucent={true} backgroundColor={'transparent'}
         />
-        <View style={{top: '10%',  marginBottom: 50 }}>
+        <View style={{ top: '10%', marginBottom: 50 }}>
           <Text style={styles.mainTitle}>Popular movies</Text>
           <ScrollView horizontal={true}>
-            {this.renderMovies()}
+            {
+              showHomePopularMovies.length > 1 ? this.renderMovies() : <ActivityIndicator size="large" color="#fff" style={{paddingLeft: 170}} />
+            }
+
           </ScrollView>
           <TouchableOpacity style={styles.moviesButton} onPress={() => navigate('PopularMovies')}>
             <Text style={styles.moviesButtonText}>View all popular movies</Text>

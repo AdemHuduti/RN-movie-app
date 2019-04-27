@@ -10,6 +10,8 @@ import OnTvMovies from './ShowAllOnTvMoviesReducer'
 
 import TvShowHome from './TvShowsHome';
 import AllTvShows from './TvAllPopularShowsReducer';
+import TvTopRatedHome from './TvTopRatedShowsHome';
+import AllTopRatedShows from './TvAllTopRatedShows';
 
 import menu from './Menu';
 
@@ -27,6 +29,8 @@ export default combineReducers({
   // Tv shows
   showTvShows: TvShowHome,
   showAllTvShows: AllTvShows,
+  showTopRated: TvTopRatedHome,
+  showAllTopRatedShows: AllTopRatedShows,
   
   // Menu
   menuIsOpen: menu.menuIsOpen,

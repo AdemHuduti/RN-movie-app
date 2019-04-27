@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
 import TopRatedMovieStyle from '../../styles/homeScreenMoviesStyle';
 import APIService from '../../APIService';
 import LinearGradient from 'react-native-linear-gradient';
@@ -51,6 +51,7 @@ class TopRatedMovieHome extends Component {
 
   render() {
     const { navigate } = this.props.navigation;
+    const { showTopRatedMovies } = this.props;
 
     return (
       <LinearGradient
@@ -65,7 +66,9 @@ class TopRatedMovieHome extends Component {
         <View style={{ top: '10%', marginBottom: 50 }}>
           <Text style={styles.mainTitle}>Top rated movies</Text>
           <ScrollView horizontal={true}>
-            {this.renderMovies()}
+            {
+              showTopRatedMovies.length > 1 ? this.renderMovies() : <ActivityIndicator size="large" color="#fff" style={{paddingLeft: 170}} />
+            }
           </ScrollView>
           <TouchableOpacity style={styles.moviesButton} onPress={() => navigate('AllTopRatedMovies')}>
             <Text style={styles.moviesButtonText}>View all top rated movies</Text>

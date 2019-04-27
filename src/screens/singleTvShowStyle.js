@@ -70,4 +70,10 @@ export default {
     color: '#fff',
     textTransform: 'uppercase'
   },
+  tvShowInfo: {
+    bottom: 30,
+    paddingHorizontal: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
 }

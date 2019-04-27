@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
 import OnTvMoviesStyle from '../../styles/homeScreenMoviesStyle';
 import APIService from '../../APIService';
 import LinearGradient from 'react-native-linear-gradient';
@@ -52,6 +52,7 @@ class OnTvMoviesHome extends Component {
 
   render() {
     const { navigate } = this.props.navigation;
+    const { onTvMoives } = this.props;
 
     return (
       <LinearGradient
@@ -66,7 +67,9 @@ class OnTvMoviesHome extends Component {
         <View style={{ top: '10%', marginBottom: 50 }}>
           <Text style={styles.mainTitle}>On TV movies</Text>
           <ScrollView horizontal={true}>
-            {this.renderMovies()}
+            {
+              onTvMoives.length > 1 ? this.renderMovies() : <ActivityIndicator size="large" color="#fff" style={{paddingLeft: 170}} />
+            }
           </ScrollView>
           <TouchableOpacity style={styles.moviesButton} onPress={() => navigate('AllOnTvMovies')}>
             <Text style={styles.moviesButtonText}>View all on tv movies</Text>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
 import APIService from '../../APIService';
 import LinearGradient from 'react-native-linear-gradient';
 import { connect } from 'react-redux';
@@ -53,6 +53,7 @@ class HomeUpcomingPopularMovie extends Component {
 
   render() {
     const { navigate } = this.props.navigation;
+    const { showHomeUpcomingMovies } = this.props;
     return (
       <LinearGradient
         start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }}
@@ -66,7 +67,9 @@ class HomeUpcomingPopularMovie extends Component {
         <View style={{ top: '10%', marginBottom: 50 }}>
           <Text style={styles.mainTitle}>Upcoming movies</Text>
           <ScrollView horizontal={true}>
-            {this.renderMovies()}
+            {
+              showHomeUpcomingMovies.length > 1 ? this.renderMovies() : <ActivityIndicator size="large" color="#fff" style={{paddingLeft: 170}} />
+            }
           </ScrollView>
           <TouchableOpacity style={styles.moviesButton} onPress={() => navigate('UpcomingAllMovies')}>
             <Text style={styles.moviesButtonText}>View all upcoming movies</Text>

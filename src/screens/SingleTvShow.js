@@ -55,11 +55,11 @@ class SingleTvShow extends Component {
           />
           <ScrollView>
             <View style={{ marginBottom: 200 }}>
-                <Image
-                  resizeMode="cover"
-                  style={styles.backdropImage}
-                  source={{ uri: `https://image.tmdb.org/t/p/w300${singleTvShow.backdrop_path}` }}
-                />
+              <Image
+                resizeMode="cover"
+                style={styles.backdropImage}
+                source={{ uri: `https://image.tmdb.org/t/p/w300${singleTvShow.backdrop_path}` }}
+              />
 
               <View style={styles.mainDetailBox}>
                 <Image
@@ -79,7 +79,7 @@ class SingleTvShow extends Component {
                       name="star"
                       color={'rgb(218,165,32)'} />
                     <Text style={styles.voteAverage}>{singleTvShow.vote_average}</Text>
-                    <Text style={styles.runtimeInfoText}>Runtime: {singleTvShow.episode_run_time}min</Text>
+                    <Text style={styles.runtimeInfoText}>{singleTvShow.episode_run_time.map((runTime, i) => i === singleTvShow.episode_run_time.length - 1 ? runTime : runTime + ", ")}min</Text>
                   </View>
                   :
                   <ActivityIndicator size="large" color="#fff" />
@@ -95,14 +95,19 @@ class SingleTvShow extends Component {
                 <Text style={styles.mainOverview}>{singleTvShow.overview}</Text>
               </View>
 
-              <View style={styles.info}>
-                <Text style={{ color: '#fff' }}>Popularity: {singleTvShow.popularity}</Text>
-                <Text style={{ color: '#fff' }}>Release date: {moment(singleTvShow.first_air_date).format('DD.MM.YYYY')}</Text>
-              </View>
-
               {
                 singleTvShow.languages && singleTvShow.languages.length ?
                   <View>
+                    <View style={styles.info}>
+                      <Text style={{ color: '#fff' }}>Popularity: {singleTvShow.popularity}</Text>
+                      <Text style={{ color: '#fff' }}>Release date: {moment(singleTvShow.first_air_date).format('DD.MM.YYYY')}</Text>
+                    </View>
+
+                    <View style={styles.tvShowInfo}>
+                      <Text style={{ color: '#fff' }}>Number of seasons: {singleTvShow.number_of_seasons}</Text>
+                      <Text style={{ color: '#fff' }}>Number of episodes: {singleTvShow.number_of_episodes}</Text>
+                    </View>
+
                     <Text style={styles.spokenLanguagesTitle}>Spoken Languages</Text>
                     <Text style={styles.spokenLanguages}>
                       {singleTvShow.languages.map((language, i) => i === singleTvShow.languages.length - 1 ? language : language + ", ")}
