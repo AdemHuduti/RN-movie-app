@@ -6,6 +6,8 @@ import AntIcon from "react-native-vector-icons/AntDesign";
 import { ScrollView } from 'react-native-gesture-handler';
 import PopularTvShowsHome from '../components/TvPopularShows/PopularShowsHome';
 import TopRatedShowsHome from '../components/TvTopRatedShows/TopRatedShowsHome';
+import OnTvShowsHome from '../components/TvOnTvShows/OnTvShowsHome';
+import TvAiringTodayHome from '../components/TvAiringToday/TvAiringTodayHome';
 
 class App extends Component {
   render() {
@@ -25,8 +27,10 @@ class App extends Component {
         </TouchableOpacity>
 
         <ScrollView>
-          <PopularTvShowsHome navigation={this.props.navigation}/>
-          <TopRatedShowsHome navigation={this.props.navigation}/>
+          <PopularTvShowsHome navigation={this.props.navigation} />
+          <TopRatedShowsHome navigation={this.props.navigation} />
+          <OnTvShowsHome navigation={this.props.navigation} />
+          <TvAiringTodayHome navigation={this.props.navigation} />
         </ScrollView>
       </LinearGradient>
     );

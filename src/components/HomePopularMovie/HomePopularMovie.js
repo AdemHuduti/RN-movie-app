@@ -16,12 +16,12 @@ class HomePopularMovie extends Component {
     if (!showHomePopularMovies.length) {
       APIService.getPopularMovies()
         .then(response => {
-          this.loadMovies(response.data)
+          this.loadPopularMovies(response.data)
         })
     }
   }
 
-  loadMovies = (data) => this.props.dispatch({ type: 'GET_MOVIES_FOR_HOME_SCREEN', data });
+  loadPopularMovies = (data) => this.props.dispatch({ type: 'GET_MOVIES_FOR_HOME_SCREEN', data });
 
   showSingleMovie(id) {
     this.props.navigation.navigate('SingleMovie', {

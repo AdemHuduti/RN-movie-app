@@ -8,22 +8,22 @@ import { ScrollView } from 'react-native-gesture-handler';
 import MainNavbar from '../MainNavBar';
 import MainMenu from '../MainMenu';
 
-class AllPopularTvShows extends Component {
+class AllOnTvShows extends Component {
   componentDidMount() {
-    this.getTopRatedTvShows()
+    this.getOnTvShows()
   }
 
-  getTopRatedTvShows() {
-    const { showAllTopRatedShows } = this.props;
-    if (!showAllTopRatedShows.length) {
-      APIService.getTopRatedTvShows()
+  getOnTvShows() {
+    const { showAllOnTvShows } = this.props;
+    if (!showAllOnTvShows.length) {
+      APIService.getOnTvShows()
         .then(response => {
-          this.loadAllTopRatedTvShows(response.data)
+          this.loadAllOnTvShows(response.data)
         })
     }
   }
 
-  loadAllTopRatedTvShows = (data) => this.props.dispatch({ type: 'GET_ALL_TOP_RATED_TV_SHOWS', data });
+  loadAllOnTvShows = (data) => this.props.dispatch({ type: 'GET_ALL_ON_TV_SHOWS', data });
   toggleMainMenu = () => this.props.dispatch({type: 'TOGGLE_MENU'});
 
   showSingleTvShow(id) {
@@ -33,8 +33,8 @@ class AllPopularTvShows extends Component {
   }
 
   renderPopularTvShows() {
-    const { showAllTopRatedShows } = this.props;
-    return showAllTopRatedShows.map((show, i) => {
+    const { showAllOnTvShows } = this.props;
+    return showAllOnTvShows.map((show, i) => {
       return (
         <View key={i}>
           <Image
@@ -78,7 +78,7 @@ class AllPopularTvShows extends Component {
           <MainNavbar
             navigation={this.props.navigation}
             navbarColor='white'
-            title="Top rated tv shows"
+            title="Popular tv shows"
           />
           <ScrollView>
             {this.renderPopularTvShows()}
@@ -94,8 +94,8 @@ const styles = StyleSheet.create(PopularTvShowStyle);
 
 
 const mapStateToProps = (state) => ({
-  showAllTopRatedShows: state.showAllTopRatedShows,
+  showAllOnTvShows: state.showAllOnTvShows,
   menuIsOpen: state.menuIsOpen
 });
 
-export default connect(mapStateToProps)(AllPopularTvShows)
+export default connect(mapStateToProps)(AllOnTvShows)

@@ -10,6 +10,8 @@ import AllOnTvMovies from './src/components/OnTvMovies/OnTvAllMovies';
 
 import AllPopularTvShows from './src/components/TvPopularShows/AllPopularTvShows';
 import AllTopRatedShows from './src/components/TvTopRatedShows/AllTopRatedShows';
+import AllOnTvShows from './src/components/TvOnTvShows/AllOnTvShows';
+import AllAiringTodayShows from './src/components/TvAiringToday/AllAiringTodayShows';
 import SingleTvShow from './src/screens/SingleTvShow';
 
 const NavigatorScreens = {
@@ -23,7 +25,9 @@ const NavigatorScreens = {
   AllTopRatedMovies,
   AllOnTvMovies,
   AllPopularTvShows,
-  AllTopRatedShows
+  AllTopRatedShows,
+  AllOnTvShows,
+  AllAiringTodayShows
 };
 
 const NavigatorOptions = {

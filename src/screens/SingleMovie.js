@@ -30,8 +30,8 @@ class SingleMovie extends Component {
       .then(res => this.setState({ singleMovie: res.data }))
   }
 
-  toggleMainMenu = () => this.props.dispatch({type: 'TOGGLE_MENU'});
-  
+  toggleMainMenu = () => this.props.dispatch({ type: 'TOGGLE_MENU' });
+
   render() {
     const { singleMovie } = this.state;
     return (
@@ -84,20 +84,20 @@ class SingleMovie extends Component {
                   <ActivityIndicator size="large" color="#fff" />
               }
 
-              <View style={styles.boxInfo}>
-                <Text style={styles.singleMovieTitle}>{singleMovie.title}</Text>
-                <Text style={styles.movieOverview}>{singleMovie.overview}</Text>
-              </View>
-
-              <View style={styles.info}>
-                <Text style={{ color: '#fff' }}>Popularity: {singleMovie.popularity}</Text>
-                <Text style={{ color: '#fff' }}>Release date: {moment(singleMovie.release_date).format('DD.MM.YYYY')}</Text>
-              </View>
-
-
               {
                 singleMovie.spoken_languages && singleMovie.spoken_languages.length ?
                   <View>
+
+                    <View style={styles.boxInfo}>
+                      <Text style={styles.singleMovieTitle}>{singleMovie.title}</Text>
+                      <Text style={styles.movieOverview}>{singleMovie.overview}</Text>
+                    </View>
+
+                    <View style={styles.info}>
+                      <Text style={{ color: '#fff' }}>Popularity: {singleMovie.popularity}</Text>
+                      <Text style={{ color: '#fff' }}>Release date: {moment(singleMovie.release_date).format('DD.MM.YYYY')}</Text>
+                    </View>
+
                     <Text style={styles.spokenLanguagesTitle}>Spoken Languages</Text>
                     <Text style={styles.spokenLanguages}>
                       {singleMovie.spoken_languages.map((language, i) => i === singleMovie.spoken_languages.length - 1 ? language.name : language.name + ", ")}

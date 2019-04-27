@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, ScrollView, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, Text, TouchableOpacity, Image, ScrollView, StyleSheet } from 'react-native';
 import APIService from '../../APIService';
 import { connect } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
@@ -18,12 +18,12 @@ class Movies extends Component {
     if (!showMovies.length) {
       APIService.getPopularMovies()
         .then(response => {
-          this.loadMovies(response.data)
+          this.loadPopularMovies(response.data)
         })
     }
   }
 
-  loadMovies = (data) => this.props.dispatch({ type: 'GET_MOVIES', data });
+  loadPopularMovies = (data) => this.props.dispatch({ type: 'GET_MOVIES', data });
   toggleMainMenu = () => this.props.dispatch({type: 'TOGGLE_MENU'});
 
   showSingleMovie(id) {

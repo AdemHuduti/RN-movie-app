@@ -8,22 +8,22 @@ import { ScrollView } from 'react-native-gesture-handler';
 import MainNavbar from '../MainNavBar';
 import MainMenu from '../MainMenu';
 
-class AllPopularTvShows extends Component {
+class AllAiringTodayShows extends Component {
   componentDidMount() {
-    this.getTopRatedTvShows()
+    this.getAiringTodayShows()
   }
 
-  getTopRatedTvShows() {
-    const { showAllTopRatedShows } = this.props;
-    if (!showAllTopRatedShows.length) {
-      APIService.getTopRatedTvShows()
+  getAiringTodayShows() {
+    const { showAllAiringToday } = this.props;
+    if (!showAllAiringToday.length) {
+      APIService.getAiringTodayShows()
         .then(response => {
-          this.loadAllTopRatedTvShows(response.data)
+          this.loadAllAiringTodayShows(response.data)
         })
     }
   }
 
-  loadAllTopRatedTvShows = (data) => this.props.dispatch({ type: 'GET_ALL_TOP_RATED_TV_SHOWS', data });
+  loadAllAiringTodayShows = (data) => this.props.dispatch({ type: 'GET_ALL_AIRING_TODAY_SHOWS', data });
   toggleMainMenu = () => this.props.dispatch({type: 'TOGGLE_MENU'});
 
   showSingleTvShow(id) {
@@ -32,9 +32,9 @@ class AllPopularTvShows extends Component {
     })
   }
 
-  renderPopularTvShows() {
-    const { showAllTopRatedShows } = this.props;
-    return showAllTopRatedShows.map((show, i) => {
+  renderAiringTodayShows() {
+    const { showAllAiringToday } = this.props;
+    return showAllAiringToday.map((show, i) => {
       return (
         <View key={i}>
           <Image
@@ -78,10 +78,10 @@ class AllPopularTvShows extends Component {
           <MainNavbar
             navigation={this.props.navigation}
             navbarColor='white'
-            title="Top rated tv shows"
+            title="Popular tv shows"
           />
           <ScrollView>
-            {this.renderPopularTvShows()}
+            {this.renderAiringTodayShows()}
           </ScrollView>
 
         </View>
@@ -94,8 +94,8 @@ const styles = StyleSheet.create(PopularTvShowStyle);
 
 
 const mapStateToProps = (state) => ({
-  showAllTopRatedShows: state.showAllTopRatedShows,
+  showAllAiringToday: state.showAllAiringToday,
   menuIsOpen: state.menuIsOpen
 });
 
-export default connect(mapStateToProps)(AllPopularTvShows)
+export default connect(mapStateToProps)(AllAiringTodayShows)

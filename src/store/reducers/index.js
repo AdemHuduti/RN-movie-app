@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+
 import ShowAllPopularMovies from './ShowAllPopularMoviesReducer';
 import ShowAllTopRatedMovies from './ShowAllTopRatedMoviesReducer';
 import ShowUpcomingMovies from './ShowAllUpcomingMoviesReducer';
@@ -12,6 +13,10 @@ import TvShowHome from './TvShowsHome';
 import AllTvShows from './TvAllPopularShowsReducer';
 import TvTopRatedHome from './TvTopRatedShowsHome';
 import AllTopRatedShows from './TvAllTopRatedShows';
+import TvOnTvShowsHome from './TvOnTvShowsHome';
+import AllOnTvShows from './TvAllOnTvShows';
+import AiringTodayHome from './TvAiringTodayHome';
+import AllAiringToday from './TvAllAiringTodayShows';
 
 import menu from './Menu';
 
@@ -31,6 +36,10 @@ export default combineReducers({
   showAllTvShows: AllTvShows,
   showTopRated: TvTopRatedHome,
   showAllTopRatedShows: AllTopRatedShows,
+  showOnTvShows: TvOnTvShowsHome,
+  showAllOnTvShows: AllOnTvShows,
+  showAiringToday: AiringTodayHome,
+  showAllAiringToday: AllAiringToday,
   
   // Menu
   menuIsOpen: menu.menuIsOpen,

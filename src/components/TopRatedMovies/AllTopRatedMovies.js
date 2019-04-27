@@ -14,8 +14,8 @@ class AllTopRatedMovies extends Component {
   }
 
   getTopRatedMovies() {
-    const { showMovies } = this.props;
-    if (!showMovies.length) {
+    const { showAllTopRated } = this.props;
+    if (!showAllTopRated.length) {
       APIService.getTopRatedMovies()
         .then(response => {
           this.loadTopRatedMovies(response.data)
@@ -23,7 +23,7 @@ class AllTopRatedMovies extends Component {
     }
   }
 
-  loadTopRatedMovies = (data) => this.props.dispatch({ type: 'GET_MOVIES', data });
+  loadTopRatedMovies = (data) => this.props.dispatch({ type: 'GET_TOP_RATED_MOVIES', data });
   toggleMainMenu = () => this.props.dispatch({type: 'TOGGLE_MENU'});
 
   showSingleMovie(id) {
@@ -33,8 +33,8 @@ class AllTopRatedMovies extends Component {
   }
 
   renderMovies() {
-    const { showMovies } = this.props;
-    return showMovies.map((movie, i) => {
+    const { showAllTopRated } = this.props;
+    return showAllTopRated.map((movie, i) => {
       return (
 
         <View key={i}>
@@ -93,7 +93,7 @@ class AllTopRatedMovies extends Component {
 const styles = StyleSheet.create(style)
 
 const mapStateToProps = (state) => ({
-  showMovies: state.showMovies,
+  showAllTopRated: state.showAllTopRated,
   menuIsOpen: state.menuIsOpen,
 });
 

@@ -6,22 +6,23 @@ import LinearGradient from 'react-native-linear-gradient';
 import { ScrollView } from 'react-native-gesture-handler';
 import { connect } from 'react-redux';
 
-class TopRatedShowsHome extends Component {
+class TvAiringTodayHome extends Component {
   componentDidMount() {
-    this.getTopRatedTvShows()
+    this.getAiringTodayShows()
   }
 
-  getTopRatedTvShows() {
-    const { showTopRated } = this.props;
-    if (!showTopRated.length) {
-      APIService.getTopRatedTvShows()
+  getAiringTodayShows() {
+    const { showAiringToday } = this.props;
+    if (!showAiringToday.length) {
+      APIService.getAiringTodayShows()
         .then(response => {
-          this.loadTopRatedShows(response.data)
+          this.loadAiringTodayTvShows(response.data)
+          console.log(response.data)
         })
     }
   }
 
-  loadTopRatedShows = (data) => this.props.dispatch({ type: 'GET_TOP_RATED_TV_SHOWS_FOR_HOME_SCREEN', data });
+  loadAiringTodayTvShows = (data) => this.props.dispatch({ type: 'GET_AIRING_TODAY_SHOWS_FOR_HOME_SCREEN', data });
 
   showSingleTvShow(id) {
     this.props.navigation.navigate('SingleTvShow', {
@@ -30,8 +31,8 @@ class TopRatedShowsHome extends Component {
   }
 
   renderShows() {
-    const { showTopRated } = this.props;
-    return showTopRated.map((show, i) => {
+    const { showAiringToday } = this.props;
+    return showAiringToday.map((show, i) => {
       return (
         <View key={i}>
           <TouchableOpacity onPress={() => this.showSingleTvShow(show.id)} >
@@ -52,7 +53,7 @@ class TopRatedShowsHome extends Component {
 
   render() {
     const { navigate } = this.props.navigation;
-    const { showTopRated } = this.props;
+    const { showAiringToday } = this.props;
 
     return (
       <LinearGradient
@@ -65,14 +66,14 @@ class TopRatedShowsHome extends Component {
           barStyle="light-content"
         />
         <View style={{ top: '10%', marginBottom: 50 }}>
-          <Text style={styles.showMainTitle}>Top rated tv shows</Text>
+          <Text style={styles.showMainTitle}>Airing today</Text>
           <ScrollView horizontal={true}>
             {
-              showTopRated.length > 1 ? this.renderShows() : <ActivityIndicator size="large" color="#fff" style={{paddingLeft: 170}} />
+              showAiringToday.length > 1 ? this.renderShows() : <ActivityIndicator size="large" color="#fff" style={{paddingLeft: 170}} />
             }
           </ScrollView>
-          <TouchableOpacity onPress={() => navigate('AllTopRatedShows')}>
-            <Text style={styles.viewMoreButton}>View all popular tv shows</Text>
+          <TouchableOpacity onPress={() => navigate('AllAiringTodayShows')}>
+            <Text style={styles.viewMoreButton}>View all airing today</Text>
           </TouchableOpacity>
         </View>
       </LinearGradient>
@@ -84,7 +85,7 @@ const styles = StyleSheet.create(PopularShowsStyle);
 
 
 const mapStateToProps = (state) => ({
-  showTopRated: state.showTopRated
+  showAiringToday: state.showAiringToday
 });
 
-export default connect(mapStateToProps)(TopRatedShowsHome)
+export default connect(mapStateToProps)(TvAiringTodayHome);
