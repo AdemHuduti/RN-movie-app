@@ -32,7 +32,6 @@ class Choose extends Component {
           </TouchableOpacity>
         </View>
           
-        
       </LinearGradient>
     );
   }

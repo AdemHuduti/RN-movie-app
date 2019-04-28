@@ -64,16 +64,16 @@ class MainMenu extends React.Component {
             style={styles.closeButton}
             onPress={() => this.closeMenu()}
           >
-            <AntIcon name="close" size={32} color={'#000'}/>
+            <AntIcon name="close" size={30} color={'#000'}/>
           </TouchableOpacity>
 
           <ScrollView>
             {menuItems.map((item, i) =>
               <TouchableOpacity
-                style={[styles.menuItem, item.disabled && styles.disabledMenuItem]}
+                style={styles.menuItem}
                 onPress={() => this.navigateAndCloseMenu(item.navigateTo)}
                 key={i}>
-                <Text style={[styles.menuItemText, item.disabled && styles.disabledMenuItemText]}>
+                <Text style={styles.menuItemText}>
                   {item.name}
                 </Text>
               </TouchableOpacity>
