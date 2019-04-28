@@ -1,6 +1,6 @@
 export default [
   {
-    name: 'Movies and TV Shows',
+    name: 'Movies and TV Shows App',
     navigateTo: '',
   },
   {

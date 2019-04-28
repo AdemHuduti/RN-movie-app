@@ -49,7 +49,7 @@ class AllAiringTodayShows extends Component {
 
             </View>
             <TouchableOpacity style={styles.moreButton} onPress={() => this.showSingleTvShow(show.id)}>
-              <Text style={styles.moreButtonText}>More</Text>
+              <Text style={styles.moreButtonText}>More &raquo;</Text>
             </TouchableOpacity>
           </View>
         </View>

@@ -14,6 +14,9 @@ import AllOnTvShows from './src/components/TvOnTvShows/AllOnTvShows';
 import AllAiringTodayShows from './src/components/TvAiringToday/AllAiringTodayShows';
 import SingleTvShow from './src/screens/SingleTvShow';
 
+import MovieSearch from './src/components/Search/MovieSearch';
+import TvShowSearch from './src/components/Search/TvShowSearch';
+
 const NavigatorScreens = {
   Choose,
   TvShowHome,
@@ -27,7 +30,9 @@ const NavigatorScreens = {
   AllPopularTvShows,
   AllTopRatedShows,
   AllOnTvShows,
-  AllAiringTodayShows
+  AllAiringTodayShows,
+  MovieSearch,
+  TvShowSearch
 };
 
 const NavigatorOptions = {

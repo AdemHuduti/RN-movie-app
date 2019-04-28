@@ -13,7 +13,7 @@ export default {
   },
   closeButton: {
     position: 'absolute',
-    top: 20,
+    top: 35,
     alignSelf: 'flex-end',
     right: 4
   },
@@ -24,19 +24,10 @@ export default {
     borderTopWidth: 1,
     borderBottomColor: '#f3f3f4',
     borderBottomWidth: 1,
-    marginTop: -1
+    marginTop: 10
   },
   menuItemText: {
-    fontSize: 20,
+    fontSize: 18,
     color: '#333'
-  },
-  disabledMenuItem: {
-    backgroundColor: '#f1f1f1',
-    borderTopColor: '#dfdfe0',
-    borderBottomColor: '#dfdfe0',
-    zIndex: 1
-  },
-  disabledMenuItemText: {
-    color: '#cecece'
-  },
+  }
 }

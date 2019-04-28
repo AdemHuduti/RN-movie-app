@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StatusBar, TouchableOpacity } from 'react-native';
+import { StatusBar, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { connect } from 'react-redux';
 import HomePopularMovie from '../components/HomePopularMovie/HomePopularMovie';
@@ -7,6 +7,7 @@ import HomeUpcomingMovies from '../components/UpcomingMovies/UpcomingMovies';
 import TopRatedMovieHome from '../components/TopRatedMovies/TopRatedMovieHome';
 import OnTvMoviesHome from '../components/OnTvMovies/OnTvMoviesHome';
 import AntIcon from "react-native-vector-icons/AntDesign";
+import SearchIcon from "react-native-vector-icons/FontAwesome";
 import { ScrollView } from 'react-native-gesture-handler';
 
 class App extends Component {
@@ -22,9 +23,16 @@ class App extends Component {
           translucent={true} backgroundColor={'transparent'}
           barStyle="light-content"
         />
-        <TouchableOpacity onPress={() => navigate('Choose')}>
-          <AntIcon name="arrowleft" size={36} color="#fff" style={{ top: '60%', marginBottom: 40, paddingLeft: 10 }} />
-        </TouchableOpacity>
+
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20, marginBottom: 20, marginTop: 70 }}>
+          <TouchableOpacity onPress={() => navigate('Choose')}>
+            <AntIcon name="arrowleft" size={36} color="#fff"  />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => navigate('MovieSearch')}>
+            <SearchIcon name="search" size={30} color="#fff"  />
+          </TouchableOpacity>
+        </View>
 
         <ScrollView>
           <HomePopularMovie navigation={this.props.navigation} />

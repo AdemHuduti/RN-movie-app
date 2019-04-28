@@ -34,7 +34,6 @@ class SingleTvShow extends Component {
 
   render() {
     const { singleTvShow } = this.state;
-    console.log(singleTvShow)
     return (
       <LinearGradient
         start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }}
