@@ -12,6 +12,8 @@
 npm install
 ```
 
+## iOS setup
+
 *Before running iOS build, Install [Xcode](https://developer.apple.com/xcode/download/)*
 
 **Step 3:** iOS
