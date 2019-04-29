@@ -14,7 +14,7 @@ npm install
 
 *Before running iOS build, Install [Xcode](https://developer.apple.com/xcode/download/)*
 
-**Step 4:** iOS
+**Step 3:** iOS
 
 **First run command**
 ```
@@ -25,3 +25,12 @@ react-native start
 ```
 react-native run-ios
 ```
+
+*Before run android build, setup [Android Studio](https://facebook.github.io/react-native/docs/android-setup.html)*
+
+**Step 4:** If Android
+
+**First run command**
+```react-native start```
+**After, open a new tab in the same terminal(ctrl+T), then run command:**
+```react-native run-android```
