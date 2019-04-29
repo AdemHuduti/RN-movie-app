@@ -26,6 +26,9 @@ react-native start
 react-native run-ios
 ```
 
+## Android setup
+
+
 *Before run android build, setup [Android Studio](https://facebook.github.io/react-native/docs/android-setup.html)*
 
 **Step 4:** If Android
