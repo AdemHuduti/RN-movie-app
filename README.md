@@ -1,6 +1,6 @@
 # React Native Movie Application
 
-*A sample movie app using react native for iOS*
+*A sample movie app using react native for iOS and Android*
 
 ## Installation
 
