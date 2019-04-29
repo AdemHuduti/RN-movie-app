@@ -31,6 +31,14 @@ react-native run-ios
 **Step 4:** If Android
 
 **First run command**
-```react-native start```
+
+```
+react-native start
+```
+
 **After, open a new tab in the same terminal(ctrl+T), then run command:**
-```react-native run-android```
+
+```
+react-native run-android
+```
+
